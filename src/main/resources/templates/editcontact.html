@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit contact</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Edit contact</h1>
+	<div>
+		<form th:object="${contact}" th:action="@{../save}" action="#" method="post">
+		  	<label for="name">First Name</label>
+			<input type="text" id="fname" th:field="*{firstName}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="author">last name</label>
+			<input type="text" id="lname" th:field="*{lastName}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="email">Email</label>
+			<input type="text" id="email" th:field="*{email}" />
+			
+			<label for="catlist">Company</label>
+			 <select id="cotlist" th:field="*{company}" class="form-control">
+       			<option th:each="company: ${companies}" th:value="${company.companyid}" th:text="${company.companyName}"></option>
+    		</select>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>
