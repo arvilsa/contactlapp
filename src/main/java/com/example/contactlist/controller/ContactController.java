@@ -25,11 +25,6 @@ public class ContactController {
 	@Autowired
 	private CompanyRepository crepository; 
 	
-    //login page
-	@RequestMapping(value="/login")
-    public String login() {	
-        return "login";
-    }
 	
     //Show all contacts
 	@GetMapping(value= "/contactlist")
